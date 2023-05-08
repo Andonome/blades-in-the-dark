@@ -1,0 +1,14 @@
+name: Build
+on:
+  push:
+    branches:
+      - run
+  pull_request:
+    branches:
+      - run
+jobs:
+  build:
+    runs-on: pandoc/core:latest
+    steps:
+    - name: Produce docs
+      run: make
